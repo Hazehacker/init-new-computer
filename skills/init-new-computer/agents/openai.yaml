@@ -1,0 +1,4 @@
+interface:
+  display_name: "新 Mac 初始化"
+  short_description: "按现状完成新 Mac 的系统配置、开发环境、日常软件与迁移验收"
+  default_prompt: "使用 $init-new-computer 检查并初始化这台 Mac，保留已有配置，持续执行已授权任务并记录验证结果和阻塞项。"
