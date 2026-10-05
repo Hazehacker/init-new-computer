@@ -42,6 +42,7 @@ zsh scripts/install-skill.zsh "$HOME/.claude/skills"
 | 系统体验 | 触控板、输入法、功能键、Finder、Dock、常用快捷键 |
 | 基础工具 | Homebrew、Git、SSH、Ghostty、VS Code、Zsh/PATH |
 | Java 环境 | SDKMAN、Java 17、Maven、IDEA、项目 SDK 和编译内存 |
+| 个人知识仓库 | `self-knowledge-system` 放入 `~/Documents/myproject`，并拉取 `tech-learning`、`my-resume`、`engineering-notes` 到对应目录 |
 | 项目依赖 | Node/npm、MySQL、Redis、RabbitMQ、Docker、数据库客户端 |
 | AI 工具 | Codex、Claude Code、CC-Switch、所需插件和技能 |
 | 软件与迁移 | 飞书、Chrome、微信、输入法、QQ、会议、网盘、邮件、截图、Obsidian及个人配置 |

@@ -16,6 +16,7 @@
 | 系统体验 | pending | | | |
 | 基础开发工具 | pending | | | |
 | Java 和 IDEA | pending | | | |
+| 个人知识仓库与三个子仓库 | pending | | | |
 | 项目依赖 | pending | | | |
 | AI 工具与配置 | pending | | | |
 | 日常软件与迁移 | pending | | | |

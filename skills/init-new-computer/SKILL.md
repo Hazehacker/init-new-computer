@@ -11,7 +11,7 @@ description: Use when initializing a new Mac, setting up a macOS development and
 
 读取用户提供的文档和当前目标，区分参考资料与当前授权。只要求计划时仅做只读盘点并交付计划；已要求执行时持续完成授权范围，不在每个阶段重新确认。用户已有计划时沿用，不重新规划已完成工作。
 
-没有其他偏好时，以 [software.md](references/software.md) 的个人 Java 开发配置为候选。保留用户现有选择；项目依赖、付费产品和订阅需要明确用途。先集中询问影响配置的缺失信息，同时推进独立项目。不存在项目路径或迁移源时不要编造；记为待用户提供。
+没有其他偏好时，以 [software.md](references/software.md) 的个人 Java 开发配置为候选。保留用户现有选择；项目依赖、付费产品和订阅需要明确用途。先集中询问影响配置的缺失信息，同时推进独立项目。个人知识仓库按下述固定位置处理；其他项目路径或迁移源未知时不要编造，记为待用户提供。
 
 ## 本机记录与备份
 
@@ -26,6 +26,7 @@ description: Use when initializing a new Mac, setting up a macOS development and
 | --- | --- | --- |
 | 系统、Finder、Dock、输入法与触控板 | [macos.md](references/macos.md) | 偏好读回；需要 GUI 的项目检查实际界面 |
 | Homebrew、Git/SSH、终端、Java/IDEA | [macos.md](references/macos.md) | 新登录 shell；Java 编译；Maven JDK/UTF-8 |
+| 个人知识仓库及三个子仓库 | [development-and-migration.md](references/development-and-migration.md) | 路径、远端、主仓库记录的提交及工作区状态 |
 | 数据库、Node、容器、AI 工具、迁移 | [development-and-migration.md](references/development-and-migration.md) | 本地服务/工具可用；迁移后实际使用 |
 | 软件候选、可选项和官方来源 | [software.md](references/software.md) | 安装架构、签名、命令/应用实际运行 |
 | 下载中断、sudo、网络、UI 权限失败 | [recovery.md](references/recovery.md) | 根因、受影响项目、已做的有限重试 |

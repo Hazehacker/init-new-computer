@@ -1,5 +1,19 @@
 # 项目依赖、AI 工具、迁移与验收
 
+## 个人知识仓库
+
+完整执行默认的新 Mac 初始化时，将 `https://github.com/Hazehacker/self-knowledge-system` 放在 `~/Documents/myproject/self-knowledge-system`。主仓库拉取后，还要将以下三个仓库放到它已有的对应目录；仅要求计划或用户明确排除该项时不拉取。
+
+| 仓库 | 相对主仓库的目录 |
+| --- | --- |
+| `https://github.com/Hazehacker/tech-learning` | `技术学习` |
+| `https://github.com/Hazehacker/my-resume` | `求职/我的简历` |
+| `https://github.com/Hazehacker/engineering-notes` | `项目经验` |
+
+先检查目标目录、现有 Git 远端和未提交改动；已有正确仓库就复用并验证，空目录才克隆，非空且不是对应仓库时记录冲突，不覆盖。三个目录在主仓库中可能是 gitlink，而仓库未必提供 `.gitmodules`；不要只依赖 `git submodule update --init`。以主仓库当前 Git 树为准：若路径仍是 gitlink，逐个核对并签出主仓库记录的提交；若仓库结构已改变，则按实际布局处理。保留已有工作区改动，不为匹配 gitlink 强制重置。
+
+私有仓库使用本机已有的 GitHub 授权；无权限时记录受阻并继续其他初始化项目，不将凭据写入 URL 或状态文件。验证四个目录的远端、实际提交和工作区状态，并记录每个仓库的结果；GitHub SSH 22 端口不可用时按 [recovery.md](recovery.md) 的官方 443 方案处理。
+
 ## 项目依赖
 
 用户提供实际项目后，检查 README、构建文件、lockfile、`.nvmrc`/`.node-version`、`.sdkmanrc`、Maven Wrapper 和容器配置确定版本。没有项目时仍完成基础环境，项目主版本与连接配置单列为待提供；不要从笔记中的旧私有仓库地址自动克隆业务代码。
