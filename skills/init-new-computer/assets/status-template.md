@@ -20,6 +20,7 @@
 | 项目依赖 | pending | | | |
 | AI 工具与配置 | pending | | | |
 | 日常软件与迁移 | pending | | | |
+| 网络与校园网认证 | pending | | | |
 | 项目验收与 Time Machine | pending | | | |
 
 每项拆成具体子项。状态：verified / existing_verified / pending / blocked / failed / not_applicable。

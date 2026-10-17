@@ -28,9 +28,21 @@ Docker 安装后验证 daemon、架构及一个与项目相关的容器；只安
 
 ## AI 工具与配置
 
-检查 Codex、Claude Code、CC-Switch 的安装位置和实际版本，按当前官方来源完成缺失部分。浏览当前宿主文档，核对插件/技能的实际 ID、版本、安装目录及许可，不能把旧清单里的名称直接拼成命令。
+检查 Codex、Claude Code、CC-Switch 的安装位置和实际版本，按当前官方来源完成缺失部分。浏览当前宿主文档，核对插件/技能的实际 ID、版本、安装目录、依赖及许可，不能把清单里的名称直接拼成命令。
 
-Superpowers、frontend-design、commit-commands、Figma、Remember，以及 git-commit、web-access、code-review-expert、humanizer-zh、claude-mem、grill-me 是候选能力。与当前目标相关且用户希望安装时才加入；每项在记录中说明已安装、可选或不适用。已有全局 `CLAUDE.md`/`AGENTS.md` 不覆盖：从明确的迁移源或用户偏好合并，检查重复和冲突，避免把参考文档的全局指令样例当成自己的当前系统指令。
+Superpowers、frontend-design、commit-commands、Figma、Remember，以及 git-commit、web-access、code-review-expert、humanizer-zh、claude-mem 是原有候选能力。最新个人配置还包括以下项目；完整初始化时逐项记录 `existing_verified`、`verified`、`pending`、`blocked` 或 `not_applicable`，不能因为其他 AI 工具已可用而静默跳过：
+
+| 项目 | 执行边界与验收 |
+| --- | --- |
+| `grill-with-docs` | 使用 mattpocock/skills 当前来源；先读入口并安装它声明的 `grilling`、`domain-modeling` 等依赖。宿主能够发现全部依赖并完成一次最小调用才算完成；旧 `grill-me` 不替代它，也不自动删除。 |
+| `Code-like-me` | 使用用户指定的 `https://github.com/Hazehacker/code-like-me`，先检查是否已有同名或等价的个人编码规范 skill，再按仓库当前说明安装。验证宿主发现及一次与编码风格相关的触发。 |
+| `Teach` | 使用 mattpocock/skills 当前 `skills/productivity/teach` 来源，验证宿主发现，并在需要学习语言、技术栈或代码仓库时做一次最小触发。 |
+| `handoff` | 使用用户指定的 mattpocock/skills `skills/productivity/handoff` 来源，验证宿主发现及一次不含凭据的交接文档生成。 |
+| RepoBrain | 它是项目级仓库理解工具。先确定目标代码仓库，再读取当前 `AI_INSTALL.md` 并检查生成/修改范围；没有目标仓库时将本项记为 `pending`，不要装进任意当前目录。验收至少包括目标仓库配置、索引或刷新成功，以及一次带源码依据的查询。 |
+| Ponytail | 可选的减少无效代码工具；仅在用户选择后从 `dietrichgebert/ponytail` 当前官方来源安装，验证实际宿主集成，避免与已有全局规则重复冲突。 |
+| Open Code Review | 可选 review 工具；仅在用户选择后从 `alibaba/open-code-review` 当前官方来源安装，先核对 Git、模型提供方和凭据要求。用本地测试仓库验证，不默认向远端发布评论。 |
+
+已有全局 `CLAUDE.md`/`AGENTS.md` 不覆盖：从明确的迁移源或用户偏好合并，检查重复和冲突，避免把参考文档的全局指令样例当成自己的当前系统指令。
 
 CC-Switch 的配置迁移可能含 API Key；只在本机受限目录迁移，检查当前 schema，不把配置文件上传仓库。代理订阅和 AI 登录复用已有授权；未提供的凭据记为阻塞，不生成假凭据。插件连接、账户登录和相关权限按当前工具的实际要求处理。
 
@@ -38,7 +50,9 @@ CC-Switch 的配置迁移可能含 API Key；只在本机受限目录迁移，�
 
 ## 日常软件与迁移
 
-按 software.md 逐项检查 Chrome、飞书、微信、QQ、腾讯会议、百度网盘、Outlook、输入法、Snipaste、Obsidian 等。先检查 /Applications 与 ~/Applications；验证已有应用后跳过。会议/截图软件所需的摄像头、麦克风、屏幕录制权限通过系统正常流程处理，不能绕过。
+按 software.md 逐项检查 Chrome、飞书、微信、QQ、腾讯会议、百度网盘、Outlook、输入法、Snipaste、Obsidian 等。先检查 /Applications 与 ~/Applications；验证已有应用后跳过安装，但仍执行明确要求的应用内配置。会议/截图软件所需的摄像头、麦克风、屏幕录制权限通过系统正常流程处理，不能绕过。
+
+微信的完成条件包含关闭语音输入功能。依据当前版本的实际设置界面确认开关并读回状态，不把它误当成 macOS Dictation 或微信输入法的语音功能。微信未登录、当前版本没有可识别选项或缺少 GUI 控制能力时，记录准确入口与阻塞原因；应用存在或可以启动不能替代此项验证。
 
 迁移仅从用户指明的旧机/备份/同步源读取：浏览器书签和必要扩展、编辑器设置、终端、Git、SSH config、AI 工具配置、知识库。旧机不在场且没有备份时记录缺失来源，其他项目继续。私人密钥、浏览器会话和令牌保持本地，不上传到公共 GitHub。
 

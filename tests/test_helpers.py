@@ -137,6 +137,35 @@ class HelpersTest(unittest.TestCase):
         self.assertNotEqual(self.install().returncode, 0)
         self.assertEqual(manifest.read_text(), "local customization\n")
 
+    def test_skill_tracks_current_ai_workspace_tools(self):
+        software = (SKILL / "references" / "software.md").read_text()
+        migration = (SKILL / "references" /
+                     "development-and-migration.md").read_text()
+        combined = software + migration
+        required = (
+            "grill-with-docs",
+            "Code-like-me",
+            "https://github.com/Hazehacker/code-like-me",
+            "Teach",
+            "https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff",
+            "https://github.com/dietrichgebert/ponytail",
+            "https://github.com/study8677/repobrain",
+            "https://github.com/alibaba/open-code-review",
+        )
+        for value in required:
+            with self.subTest(value=value):
+                self.assertIn(value, combined)
+        self.assertNotIn("、grill-me", software.lower())
+
+    def test_skill_tracks_wechat_and_csu_wifi_acceptance(self):
+        migration = (SKILL / "references" /
+                     "development-and-migration.md").read_text()
+        recovery = (SKILL / "references" / "recovery.md").read_text()
+        self.assertIn("关闭语音输入", migration)
+        self.assertIn("portal.csu.edu.cn", recovery)
+        self.assertIn("认证后", recovery)
+        self.assertIn("恢复", recovery)
+
 
 if __name__ == "__main__":
     unittest.main()

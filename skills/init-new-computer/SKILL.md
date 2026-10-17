@@ -29,7 +29,7 @@ description: Use when initializing a new Mac, setting up a macOS development and
 | 个人知识仓库及三个子仓库 | [development-and-migration.md](references/development-and-migration.md) | 路径、远端、主仓库记录的提交及工作区状态 |
 | 数据库、Node、容器、AI 工具、迁移 | [development-and-migration.md](references/development-and-migration.md) | 本地服务/工具可用；迁移后实际使用 |
 | 软件候选、可选项和官方来源 | [software.md](references/software.md) | 安装架构、签名、命令/应用实际运行 |
-| 下载中断、sudo、网络、UI 权限失败 | [recovery.md](references/recovery.md) | 根因、受影响项目、已做的有限重试 |
+| 下载中断、sudo、网络、校园网认证、UI 权限失败 | [recovery.md](references/recovery.md) | 根因、受影响项目、已做的有限重试；校园网认证后联网与代理恢复 |
 
 脚本路径均相对于本 skill 目录；先确定完整目录，再调用其解释器。脚本仅覆盖可重复的机械操作，其他工作用当前可用的文件、终端、官方连接器或电脑控制工具完成。
 
@@ -49,4 +49,4 @@ zsh scripts/managed-block.zsh "/absolute/path/.zshrc" sdkman "/absolute/path/con
 
 对安装命令和软件版本核对当前官方来源。保留部分下载并优先续传；完整校验与应用签名通过后才安装。重试按 [recovery.md](references/recovery.md) 的限制执行。
 
-最终交付已验证结果、备份和本机状态路径，以及每个阻塞项的原因和准确下一步。项目构建/启动、GUI 首次设置、登录或备份未验证时分别列为未完成，不能以软件文件存在代替整机完成。
+最终交付已验证结果、备份和本机状态路径，以及每个阻塞项的原因和准确下一步。项目构建/启动、GUI 首次设置、应用内偏好、登录或备份未验证时分别列为未完成，不能以软件文件存在代替整机完成。

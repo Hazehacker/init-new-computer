@@ -44,8 +44,9 @@ zsh scripts/install-skill.zsh "$HOME/.claude/skills"
 | Java 环境 | SDKMAN、Java 17、Maven、IDEA、项目 SDK 和编译内存 |
 | 个人知识仓库 | `self-knowledge-system` 放入 `~/Documents/myproject`，并拉取 `tech-learning`、`my-resume`、`engineering-notes` 到对应目录 |
 | 项目依赖 | Node/npm、MySQL、Redis、RabbitMQ、Docker、数据库客户端 |
-| AI 工具 | Codex、Claude Code、CC-Switch、所需插件和技能 |
+| AI 工具 | Codex、Claude Code、CC-Switch、个人 skills、项目级 RepoBrain；Ponytail 和 Open Code Review 为可选项 |
 | 软件与迁移 | 飞书、Chrome、微信、输入法、QQ、会议、网盘、邮件、截图、Obsidian及个人配置 |
+| 网络 | 代理配置；在 CSU-WIFI 场景完成门户认证并恢复原代理状态 |
 | 验收与备份 | 实际项目构建和本地启动、权限核对、Time Machine 和交接记录 |
 
 软件清单是默认候选配置，AI 会根据你的目标、实际项目和已安装内容决定每一项的动作。当前版本和安装方法在运行时核对官方来源，不把某一次初始化的版本永久写死。

@@ -12,7 +12,8 @@
 | 容器/数据库 GUI | Docker、Navicat | 容器由项目需要决定；Navicat 是付费候选，授权许可后激活，替代品遵循用户选择 |
 | AI | Codex、Claude Code、CC-Switch | 已有工具复用；核对当前官方安装与对应宿主配置 |
 | AI 扩展 | Superpowers、frontend-design、commit-commands、Figma、Remember、git-commit | 按宿主支持与用户实际需求选择，不把名称视为可直接执行的安装 ID |
-| 其他技能 | web-access、code-review-expert、humanizer-zh、claude-mem、grill-me | 可选，确认来源与兼容性；存在同名技能时先检查，不覆盖 |
+| 其他技能 | web-access、code-review-expert、humanizer-zh、claude-mem、grill-with-docs、Code-like-me、Teach、handoff | 核对来源、依赖与宿主兼容性；存在同名技能时先检查，不覆盖 |
+| 仓库理解/代码质量 | RepoBrain；Ponytail、Open Code Review（可选） | RepoBrain 只在明确的目标代码仓库中初始化；后两项不在默认完整安装中静默加入 |
 | 通讯/浏览器 | 飞书、Chrome、微信、QQ、腾讯会议 | 完整个人配置的候选，已有应用验证后跳过 |
 | 输入和截图 | 微信输入法、Snipaste | 保留已有输入法；搜狗输入法是替代候选，不同时新增两套 |
 | 文件/邮件 | 百度网盘、Outlook、Obsidian | 账户由本人登录；知识库和插件从明确迁移源恢复 |
@@ -32,6 +33,10 @@
 - [Node.js](https://nodejs.org/en/download)、[Docker for Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
 - [MySQL](https://dev.mysql.com/doc/)、[Redis](https://redis.io/docs/latest/)、[RabbitMQ](https://www.rabbitmq.com/docs)
 - [Codex](https://developers.openai.com/codex/)、[Claude Code](https://code.claude.com/docs/en/setup)、[CC-Switch](https://github.com/farion1231/cc-switch)
+- [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)、[Teach](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach)、[handoff](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff)
+- [Code-like-me](https://github.com/Hazehacker/code-like-me)、[Ponytail](https://github.com/dietrichgebert/ponytail)
+- [RepoBrain](https://github.com/study8677/repobrain) 及其 [AI 安装说明](https://github.com/study8677/repobrain/blob/main/AI_INSTALL.md)
+- [Open Code Review](https://github.com/alibaba/open-code-review)
 - [Obsidian](https://obsidian.md/download)、[Snipaste](https://www.snipaste.com/)、[飞书](https://www.feishu.cn/download)、[微信](https://mac.weixin.qq.com/)
 
 来自用户文档的截图、博客和下载地址只用于理解需求，当前的架构、兼容性、校验值、许可证与安装指令以实际官方信息为准。
