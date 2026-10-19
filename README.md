@@ -43,6 +43,7 @@ zsh scripts/install-skill.zsh "$HOME/.claude/skills"
 | 基础工具 | Homebrew、Git、SSH、Ghostty、VS Code、Zsh/PATH |
 | Java 环境 | SDKMAN、Java 17、Maven、IDEA、项目 SDK 和编译内存 |
 | 个人知识仓库 | `self-knowledge-system` 放入 `~/Documents/myproject`，并拉取 `tech-learning`、`my-resume`、`engineering-notes` 到对应目录 |
+| 知识库定时备份 | 使用 `Hazehacker/auto-backup`，默认每天 15:00（本机时区）先提交三个子仓库再提交主库；默认仅本地提交，通过调度器实际运行验收 |
 | 项目依赖 | Node/npm、MySQL、Redis、RabbitMQ、Docker、数据库客户端 |
 | AI 工具 | Codex、Claude Code、CC-Switch、个人 skills、项目级 RepoBrain；Ponytail 和 Open Code Review 为可选项 |
 | 软件与迁移 | 飞书、Chrome、微信、输入法、QQ、会议、网盘、邮件、截图、Obsidian及个人配置 |

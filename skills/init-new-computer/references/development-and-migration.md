@@ -14,6 +14,18 @@
 
 私有仓库使用本机已有的 GitHub 授权；无权限时记录受阻并继续其他初始化项目，不将凭据写入 URL 或状态文件。验证四个目录的远端、实际提交和工作区状态，并记录每个仓库的结果；GitHub SSH 22 端口不可用时按 [recovery.md](recovery.md) 的官方 443 方案处理。
 
+## 知识库定时备份
+
+完整初始化时，仓库就绪后必须用 `git@github.com:Hazehacker/auto-backup.git` 为 `self-knowledge-system` 及上述三个子仓库配置定时备份。仅要求计划时交付配置方案；用户明确排除定时备份时记录 `not_applicable`。附件下载未完成不阻止文本知识库备份；Time Machine 或业务项目缺失也不影响本项。
+
+1. **来源与覆盖范围**：将 `auto-backup` 放在 `~/Documents/myproject/auto-backup`，已有正确仓库就复用。先读当前 README 和 `local-backup/for_unix/auto_backup_unix.sh`，核对实际路径、分支和提交/推送行为。一个定时任务依次处理技术学习、项目经验、我的简历，最后处理主知识库，使主仓库记录子仓库的新 gitlink；不要只备份主仓库，也不要自动加入其他未指定仓库。
+2. **提交模式**：默认仅做本地 Git 提交，各仓库关闭推送；用户明确要求远端备份时再按指定远端配置并验证推送。本地模式不需要 GitHub PAT 等推送凭据；若当前脚本仍无条件要求凭据，先修复并验证本地模式，不收集无用令牌。说明本地提交保留版本，无法应对本机磁盘丢失。已有修改保留并纳入用户授权的备份范围，不强制重置、覆盖或清理文件。
+3. **分支与稀疏检出**：使脚本配置与各仓库的实际本地分支一致。全新检出停在 detached HEAD 时，可从主仓库记录的当前提交创建本地分支；已有分支不重置。稀疏检出时核对 gitlink 匹配规则，验证能记录子仓库提交更新，且未下载附件不会被误记为删除；不为配置备份提前下载全部附件。
+4. **时间与调度**：沿用用户已经指定的时间和时区；没有指定时，个人默认为每天 **15:00**，使用目标 Mac 当前时区并在交付中注明。先查已有 launchd/cron 等任务，复用并验证有效配置，避免重复运行。新建时优先用户级 launchd：`~/Library/LaunchAgents/com.hazehacker.auto-backup.plist`，日历间隔 `Hour=15`、`Minute=0`（按用户时间调整）。解释器与脚本使用绝对路径，明确工作目录和必要环境变量，标准输出/错误写入 `~/Library/Logs/auto-backup/`。这是本机脚本调度，无需另建 AI 模型定时任务。
+5. **后台权限**：终端能执行不代表 launchd 能访问 `Documents`。后台出现 `Operation not permitted` 时，检查日志确认被拦截的实际可执行文件。若需给 `/bin/bash` 等解释器完全磁盘访问权限，先说明权限也覆盖其他经它执行的脚本并取得用户授权，再引导在系统设置完成；仅给 Terminal 授权不代表 Bash 后台任务已获授权。权限未完成时记录 `blocked`，继续其他初始化项目。
+6. **实际验收**：先检查 plist 语法并加载任务，再通过调度器触发一次（launchd 使用 `launchctl kickstart "gui/$(id -u)/com.hazehacker.auto-backup"`），等待执行结束。读取实际日历配置、退出码及本次新增日志，逐个核对四仓库提交/工作区、主仓库 gitlink 和未下载文件；没有变化时应正常退出且不制造空提交。只有调度器实际执行成功才能标记 `verified`；文件存在、已加载或交互式终端运行成功均不足以替代。记录提交结果或“无变化”，避免把正常空闲的 `not running` 当成失败。
+7. **交付与恢复**：在状态模板单列定时备份，记录四仓库范围、提交/推送模式、时间和时区、任务配置/日志路径、最后一次真实运行证据，以及手动触发和停用方式。保留被改配置的备份；恢复或继续初始化时先查现有任务，不能再创建一份。说明用户级任务依赖登录，关机时不执行；日历任务错过休眠时间会在唤醒后合并执行，详见 [Apple launchd 定时任务说明](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/ScheduledJobs.html)。
+
 ## 项目依赖
 
 用户提供实际项目后，检查 README、构建文件、lockfile、`.nvmrc`/`.node-version`、`.sdkmanrc`、Maven Wrapper 和容器配置确定版本。没有项目时仍完成基础环境，项目主版本与连接配置单列为待提供；不要从笔记中的旧私有仓库地址自动克隆业务代码。

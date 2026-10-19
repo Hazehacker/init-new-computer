@@ -27,6 +27,7 @@ description: Use when initializing a new Mac, setting up a macOS development and
 | 系统、Finder、Dock、输入法与触控板 | [macos.md](references/macos.md) | 偏好读回；需要 GUI 的项目检查实际界面 |
 | Homebrew、Git/SSH、终端、Java/IDEA | [macos.md](references/macos.md) | 新登录 shell；Java 编译；Maven JDK/UTF-8 |
 | 个人知识仓库及三个子仓库 | [development-and-migration.md](references/development-and-migration.md) | 路径、远端、主仓库记录的提交及工作区状态 |
+| 知识库及子仓库定时备份 | [知识库定时备份](references/development-and-migration.md#知识库定时备份) | 四仓库覆盖、时间与时区、调度器实际运行退出码和日志 |
 | 数据库、Node、容器、AI 工具、迁移 | [development-and-migration.md](references/development-and-migration.md) | 本地服务/工具可用；迁移后实际使用 |
 | 软件候选、可选项和官方来源 | [software.md](references/software.md) | 安装架构、签名、命令/应用实际运行 |
 | 下载中断、sudo、网络、校园网认证、UI 权限失败 | [recovery.md](references/recovery.md) | 根因、受影响项目、已做的有限重试；校园网认证后联网与代理恢复 |
@@ -44,6 +45,8 @@ zsh scripts/managed-block.zsh "/absolute/path/.zshrc" sdkman "/absolute/path/con
 ## 完成条件
 
 执行完整计划，遇到阻塞继续不依赖该条件的项目。Java 17 由一个版本管理器维护；SDKMAN 在 Mac 上优先用 Zsh，避免 Bash 3.2 造成无谓的 Homebrew 依赖。已安装的软件先验证，失败再修复；不自动升级已有数据库或替换发行版。
+
+默认完整初始化包含 `self-knowledge-system` 及三个子仓库的定时备份。仓库获取和定时备份分别验收、记录；定时任务尚未实际运行成功时，知识库初始化仍有未完成项，不能只以克隆成功结束。
 
 文档中的离职清理、RabbitMQ 清空数据、云端部署和全局 AI 指令样例属于其他任务；不从参考文档扩大本次范围。参考中的明文凭据不复制到公共仓库或通用配置。
 
