@@ -10,19 +10,19 @@
 
 ## 2. 系统体验
 
-完整默认配置为 Dock 保持现有位置并自动隐藏；Finder 显示路径栏和状态栏；顶排键默认使用亮度、音量等印在按键上的系统快捷操作，按住 Fn/🌐 时使用 F1–F12 标准功能键；在用户不需要单独按 Fn 切换输入法时将该操作关闭。可用以下命令，先备份原值，再按授权逐项执行并读回：
+完整默认配置为 Dock 保持现有位置并自动隐藏；Finder 显示路径栏和状态栏；**不按 Fn/🌐 时直接使用 F1–F12，按住 Fn/🌐 时使用音量、亮度等系统控制**；在用户不需要单独按 Fn 切换输入法时将该操作关闭。可用以下命令，先备份原值，再按授权逐项执行并读回：
 
 ```sh
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
-defaults write NSGlobalDomain com.apple.keyboard.fnState -bool false
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 defaults write NSGlobalDomain AppleFnUsageType -int 0
 ```
 
 Dock 可通过 `killall Dock` 刷新。Finder 正在复制文件时不重启进程；保留当前窗口并通过界面检查，必要时记录重登后验收。`defaults read` 成功仅证明保存值，不能代替手势或输入法的实际交互验证。
 
-功能键须在“系统设置 → 键盘 → 键盘快捷键 → 功能键”确认“将 F1、F2 等键用作标准功能键”为**关闭**，并与 `com.apple.keyboard.fnState=0` 的读回结果一致。若命令值与界面不一致，通过系统界面重新保存并再次核对；不要仅凭命令写入成功标记完成。单独按 Fn/🌐 的输入法操作是另一项设置，分别按用户偏好配置与验收。
+在“系统设置 → 键盘 → 键盘快捷键 → 功能键”确认“将 F1、F2 等键用作标准功能键”为**开启**，并与 `com.apple.keyboard.fnState=1` 的读回结果一致。用“不按 Fn”和“按住 Fn”的具体按键行为描述偏好，避免仅用“功能键/非功能键”造成歧义。若命令值与界面不一致，通过系统界面重新保存并再次核对；不要仅凭命令写入成功标记完成。单独按 Fn/🌐 的输入法操作是另一项设置，分别按用户偏好配置与验收。
 
 用可用的电脑控制工具检查和设置轻点点击、双指右键、三指拖拽。调整指针速度和力度只依据用户偏好，不猜数值。保留已有微信输入法等选择，避免重复添加；检查快捷键冲突。Finder 侧边栏按文档整理：下载、用户目录、应用程序、文稿、磁盘/外置磁盘、隔空投送等；“最近使用”按用户习惯决定。Touch Bar 相关项只适用于带 Touch Bar 的机型。
 
