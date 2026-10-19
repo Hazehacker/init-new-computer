@@ -39,7 +39,7 @@ zsh scripts/install-skill.zsh "$HOME/.claude/skills"
 | 阶段 | 内容 |
 | --- | --- |
 | 盘点与备份 | 系统、芯片、空间、电池、软件和工具；终端、Git、SSH、偏好备份 |
-| 系统体验 | 触控板、输入法、功能键、Finder、Dock、常用快捷键 |
+| 系统体验 | 触控板、输入法、Finder、Dock、常用快捷键；顶排键默认亮度/音量等系统操作，Fn/🌐 配合使用 F1–F12 |
 | 基础工具 | Homebrew、Git、SSH、Ghostty、VS Code、Zsh/PATH |
 | Java 环境 | SDKMAN、Java 17、Maven、IDEA、项目 SDK 和编译内存 |
 | 个人知识仓库 | `self-knowledge-system` 放入 `~/Documents/myproject`，并拉取 `tech-learning`、`my-resume`、`engineering-notes` 到对应目录 |
