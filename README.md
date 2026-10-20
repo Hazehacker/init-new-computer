@@ -46,7 +46,7 @@ zsh scripts/install-skill.zsh "$HOME/.claude/skills"
 | 知识库定时备份 | 使用 `Hazehacker/auto-backup`，默认每天 15:00（本机时区）先提交三个子仓库再提交主库；默认仅本地提交，通过调度器实际运行验收 |
 | 项目依赖 | Node/npm、MySQL、Redis、RabbitMQ、Docker、数据库客户端 |
 | AI 工具 | Codex、Claude Code、CC-Switch、个人 skills、项目级 RepoBrain；Ponytail 和 Open Code Review 为可选项 |
-| 软件与迁移 | 飞书、Chrome、微信、输入法、QQ、会议、网盘、邮件、截图、Obsidian及个人配置 |
+| 软件与迁移 | 飞书、Chrome、微信、输入法、QQ、会议、网盘、邮件、截图、Obsidian、Typora及个人配置；Typora 默认安装，试用/激活单独记录 |
 | 网络 | 代理配置；在 CSU-WIFI 场景完成门户认证并恢复原代理状态 |
 | 验收与备份 | 实际项目构建和本地启动、权限核对、Time Machine 和交接记录 |
 

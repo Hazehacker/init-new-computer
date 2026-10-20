@@ -21,6 +21,8 @@
 | 项目依赖 | pending | | | |
 | AI 工具与配置 | pending | | | |
 | 日常软件与迁移 | pending | | | |
+| Typora 安装与启动 | pending | | | |
+| Typora 试用/激活 | pending | | | |
 | 网络与校园网认证 | pending | | | |
 | 项目验收与 Time Machine | pending | | | |
 

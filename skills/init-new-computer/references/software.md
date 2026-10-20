@@ -17,7 +17,8 @@
 | 通讯/浏览器 | 飞书、Chrome、微信、QQ、腾讯会议 | 完整个人配置的候选，已有应用验证后跳过 |
 | 输入和截图 | 微信输入法、Snipaste | 保留已有输入法；搜狗输入法是替代候选，不同时新增两套 |
 | 文件/邮件 | 百度网盘、Outlook、Obsidian | 账户由本人登录；知识库和插件从明确迁移源恢复 |
-| Markdown/办公 | Typora、Word | 文档中出现的可选工具，需要合法许可，不自动购买 |
+| Markdown | Typora | 完整初始化时默认安装并验证启动；已有应用先验证复用。安装与许可激活分开记录，未提供许可证不跳过安装；购买、首次协议及激活由用户完成 |
+| 办公 | Word | 可选工具，需要合法许可，不自动购买 |
 | 网络 | 已有 Clash Verge 或用户指定客户端 | 复用现有连通性；订阅、代理、VPN 凭据由用户提供，不推荐不明账号来源 |
 | 体验配置工具 | EffectiveMac/macbootstrap | 默认逐项实现本 skill 的设置；用户明确需要整套工具时先检查当前脚本及覆盖范围 |
 
@@ -37,6 +38,7 @@
 - [Code-like-me](https://github.com/Hazehacker/code-like-me)、[Ponytail](https://github.com/dietrichgebert/ponytail)
 - [RepoBrain](https://github.com/study8677/repobrain) 及其 [AI 安装说明](https://github.com/study8677/repobrain/blob/main/AI_INSTALL.md)
 - [Open Code Review](https://github.com/alibaba/open-code-review)
+- [Typora](https://typora.io/) 和 [Homebrew Typora cask](https://formulae.brew.sh/cask/typora)
 - [Obsidian](https://obsidian.md/download)、[Snipaste](https://www.snipaste.com/)、[飞书](https://www.feishu.cn/download)、[微信](https://mac.weixin.qq.com/)
 
 来自用户文档的截图、博客和下载地址只用于理解需求，当前的架构、兼容性、校验值、许可证与安装指令以实际官方信息为准。
